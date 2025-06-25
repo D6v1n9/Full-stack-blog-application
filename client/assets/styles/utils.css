@@ -1,0 +1,58 @@
+/* Margin Utilities */
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* Padding Utilities */
+.p-10 { padding: 10px; }
+.p-20 { padding: 20px; }
+.pt-10 { padding-top: 10px; }
+.pb-20 { padding-bottom: 20px; }
+
+/* Text Alignment */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+/* Font Weight */
+.fw-bold { font-weight: bold; }
+.fw-light { font-weight: 300; }
+
+/* Display */
+.flex { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-center { display: flex; justify-content: center; align-items: center; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+
+/* Width */
+.w-full { width: 100%; }
+.max-w-1024 { max-width: 1024px; }
+
+/* Button Utility */
+.btn {
+  padding: 10px 20px;
+  border-radius: var(--rounded-md);
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+.btn-primary {
+  background-color: var(--teal);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background-color: var(--white);
+  color: var(--teal);
+  border-color: var(--teal);
+}
+.btn-outline {
+  background-color: var(--white);
+  color: var(--teal);
+  border: 1px solid var(--teal);
+}
+.btn-outline:hover {
+  background-color: var(--light-green);
+  color: var(--black);
+}
