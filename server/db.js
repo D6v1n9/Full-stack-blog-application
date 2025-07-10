@@ -1,4 +1,4 @@
-import Client from "pg"
+import {Client} from "pg"
 
 const db = new Client({
     user:"postgres",
@@ -9,3 +9,5 @@ const db = new Client({
 });
 
 db.connect(); 
+
+export {db};
