@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Register() {
@@ -9,10 +9,12 @@ function Register() {
     password: "",
   });
 
+  const [err, setError] = useState(null);
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     /* Since there will be only one event at a time, you will need to modify that specific event. */
     /* The prev is an object, so spread it and update only the part related to the event that occurred. */
-
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -21,9 +23,10 @@ function Register() {
     try {
       console.log(inputs);
       const res = await axios.post("/api/auth/register", inputs);
-      console.log(res);
+      //If user gets created than navigate it to login 
+      navigate("/login");
     } catch (err) {
-      console.log(err);
+      setError(err.response.data);
     }
   };
 
@@ -57,7 +60,7 @@ function Register() {
               onChange={handleChange}
             />
             <button onClick={handleSubmit}>Register</button>
-            <p>This is an error !</p>
+            {err && <p>{err}</p>}
             <span>
               Do you already have an account? <Link to="/login">login</Link>
             </span>
